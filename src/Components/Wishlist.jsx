@@ -14,7 +14,7 @@ const Wishlist = () => {
   const getWishlistByUser = async () => {
     axios
       .get(
-        `https://mrirakib04-server-2.vercel.app/wishlist/user?query=${user.email}`,
+        `https://mrirakib04-server-2.vercel.app/wishlist/user?query=${user?.email}`,
         { withCredentials: true }
       )
       .then((res) => setWishlist(res.data))

@@ -49,7 +49,7 @@ const AuthContextProvider = ({ children }) => {
         });
         setName(name);
         setImage(photoURL);
-        const userMail = { userMail: userCredential.user.email };
+        const userMail = { userMail: userCredential?.user?.email };
         axios.post("https://mrirakib04-server-2.vercel.app/jwt", userMail, {
           withCredentials: true,
         });
@@ -77,8 +77,7 @@ const AuthContextProvider = ({ children }) => {
           pauseOnHover: true,
           draggable: true,
         });
-        const userMail = { userMail: userCredential.user.email };
-        // console.log(userMail);
+        const userMail = { userMail: userCredential?.user?.email };
         axios.post("https://mrirakib04-server-2.vercel.app/jwt", userMail, {
           withCredentials: true,
         });
@@ -102,7 +101,7 @@ const AuthContextProvider = ({ children }) => {
         setName(currentUser.displayName);
         setImage(currentUser.photoURL);
         setPhone(currentUser.phoneNumber);
-        const userMail = { userMail: currentUser.email };
+        const userMail = { userMail: currentUser?.email };
         axios.post("https://mrirakib04-server-2.vercel.app/jwt", userMail, {
           withCredentials: true,
         });
@@ -135,9 +134,7 @@ const AuthContextProvider = ({ children }) => {
           pauseOnHover: true,
           draggable: true,
         });
-        console.log("user res", result.user.email);
-        const userMail = { userMail: result.user.email };
-        console.log(userMail);
+        const userMail = { userMail: result?.user?.email };
         axios.post("https://mrirakib04-server-2.vercel.app/jwt", userMail, {
           withCredentials: true,
         });

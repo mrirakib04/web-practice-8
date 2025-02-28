@@ -192,7 +192,7 @@ const Navbar = () => {
               <div className="absolute top-16 right-2 flex flex-col gap-2 py-5 px-3 bg-gray-50 rounded-lg border-2">
                 <h3 className="text-lg font-semibold">{user.displayName}</h3>
                 <p className="text-lg text-gray-600 font-medium">
-                  {user.email}
+                  {user?.email}
                 </p>
 
                 <div>

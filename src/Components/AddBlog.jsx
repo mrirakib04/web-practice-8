@@ -267,7 +267,7 @@ const AddBlog = () => {
                 type="email"
                 name="userEmail"
                 id="userEmail"
-                value={user.email}
+                value={user?.email}
                 readOnly
                 className="w-full p-2 border-2 border-zinc-400 rounded mt-2 text-base font-medium"
               />

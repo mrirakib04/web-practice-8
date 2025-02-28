@@ -63,11 +63,11 @@ const LatestBlogs = () => {
     if (!user) {
       return navigate("/login");
     }
-    const wishlistFor = user.email;
+    const wishlistFor = user?.email;
 
     if (
       wishlist.some(
-        (blog) => blogId === blog.blogId && user.email === blog.wishlistFor
+        (blog) => blogId === blog.blogId && user?.email === blog.wishlistFor
       )
     ) {
       return toast.info(`This blog already in your wishlist 📌`, {

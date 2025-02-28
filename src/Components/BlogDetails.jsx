@@ -88,11 +88,11 @@ const BlogDetails = () => {
     if (!user) {
       return navigate("/login");
     }
-    const wishlistFor = user.email;
+    const wishlistFor = user?.email;
 
     if (
       wishlist.some(
-        (blog) => blogId === blog.blogId && user.email === blog.wishlistFor
+        (blog) => blogId === blog.blogId && user?.email === blog.wishlistFor
       )
     ) {
       return toast.info(`This blog already in your wishlist 📌`, {
@@ -162,7 +162,7 @@ const BlogDetails = () => {
       });
     }
 
-    if (user.email === blog.userEmail) {
+    if (user?.email === blog.userEmail) {
       return toast.warn(`You can't comment on your own blog`, {
         position: "top-center",
         autoClose: 2000,

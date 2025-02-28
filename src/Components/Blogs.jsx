@@ -24,7 +24,6 @@ const Blogs = () => {
 
   // context
   const { darkmode, user, loading } = useContext(AuthContext);
-  console.log(user?.email);
   // sort controls
   const [sortType, setSortType] = useState("all");
   const sortWordsBTN = () => {
@@ -55,11 +54,11 @@ const Blogs = () => {
     if (!user) {
       return navigate("/login");
     }
-    const wishlistFor = user.email;
+    const wishlistFor = user?.email;
 
     if (
       wishlist.some(
-        (blog) => blogId === blog.blogId && user.email === blog.wishlistFor
+        (blog) => blogId === blog.blogId && user?.email === blog.wishlistFor
       )
     ) {
       return toast.info(`This blog already in your wishlist 📌`, {
@@ -389,7 +388,7 @@ const Blogs = () => {
                             {blog.userName}
                           </h3>
                         </div>
-                        {user.email === blog.userEmail && (
+                        {user?.email === blog.userEmail && (
                           <button
                             onClick={() => handleDeleteBlog(blog._id)}
                             className="text-2xl text-red-700 transition hover:text-red-500"
